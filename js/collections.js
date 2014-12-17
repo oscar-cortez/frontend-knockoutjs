@@ -1,10 +1,14 @@
 // Define a "Person" class that tracks its own name and children, and has a method to add a new child
 var Person = function(name, children) {
+    this.itemToAdd = ko.observable("");
     this.name = name;
     this.children = ko.observableArray(children);
- 
-    this.addChild = function() {
-        this.children.push("New child");
+
+    this.addChild = function () { // Clear the text box
+
+        if ((this.itemToAdd() != "") && (this.children.indexOf(this.itemToAdd()) < 0)) // Prevent blanks and duplicates
+            this.children.push(this.itemToAdd());
+            this.itemToAdd("");
     }.bind(this);
 }
  
@@ -14,8 +18,7 @@ var viewModel = {
         new Person("Annabelle", ["Arnie", "Anders", "Apple"]),
         new Person("Bertie", ["Boutros-Boutros", "Brianna", "Barbie", "Bee-bop"]),
         new Person("Charles", ["Cayenne", "Cleopatra"])
-        ],
-    showRenderTimes: ko.observable(false)
-};
+        ]};
+ 
  
 ko.applyBindings(viewModel);
