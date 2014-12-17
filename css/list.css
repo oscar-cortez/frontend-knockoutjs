@@ -5,3 +5,7 @@ background-color: #00BFFF;
 .container {
 	text-align: center;
 }
+select{ 
+width: 100px;
+height: 50px;
+}

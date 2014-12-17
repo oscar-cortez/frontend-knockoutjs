@@ -1,0 +1,18 @@
+body { 
+background-color: #00BFFF;
+
+}
+.container {
+	text-align: center;
+}
+.readout{ 
+margin-color:black ;
+text-align:center;
+border-radius: 2px;
+border-color: black;
+
+}
+.segundo{ 
+border-radius: 2px;
+border-color: black;
+}

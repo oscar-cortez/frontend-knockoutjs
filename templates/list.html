@@ -1,0 +1,46 @@
+<html>
+	<head>
+		 <title>Frontend Knockout</title>
+				<link rel = "stylesheet" type = "text/css" href="../bootstrap/css/bootstrap.css">
+				<link rel = "stylesheet" type = "text/css" href="../bootstrap/css/bootstrap.min.css">   
+				<link rel = "stylesheet" type = "text/css" href="../bootstrap/css/bootstrap-theme.min.css">
+				<link rel = "stylesheet" type = "text/css" href="../bootstrap/css/bootstrap-theme.css">
+				<!--LLamando Archivo CSS-->
+				<link rel = "stylesheet" type = "text/css" href="../css/list.css">   	
+	</head>
+	<body>
+		<div class="container">
+    			<div class="row">
+	   				<div class="col-md-12">
+		   				<div class="jumbotron">
+  							<h1>Grocery List</h1>
+  							<p>As a shopper I must be able to see my grocery list. (use a selection field to display the list)
+
+As a shopper I must be able to add, remove and sort my grocery list.</p>
+				  		</div>		
+					<div class="panel panel-default">
+ 						 <!-- Default panel contents -->
+  						<div class="panel-heading"><h1>Welcome  </h1></div>
+  							<div class="panel-body">
+						<div class='liveExample'> 
+				   			 <form data-bind="submit:addItem">
+				       			Add item: <input type="text" data-bind='value:itemToAdd, valueUpdate: "afterkeydown"' />
+				        		<button type="submit" data-bind="enable: itemToAdd().length > 0">Add</button>
+				    		</form>		
+				   			<select multiple="multiple" height="5" data-bind="options:allItems, selectedOptions:selectedItems"> </select>
+				    		<div>
+				        		<button data-bind="click: removeSelected, enable: selectedItems().length > 0">Remove</button>
+				       			<button data-bind="click: sortItems, enable: allItems().length > 1">Sort</button>
+				    		</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				</div>
+				</div>		
+		<script  type="text/javascript"  src="http://knockoutjs.com/downloads/knockout-3.2.0.js "></script>
+	    <script type="text/javascript" src="../js/list/script.js"></script>
+		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+   	</body>
+
+</html>

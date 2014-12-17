@@ -2,3 +2,41 @@
 Usa este archivo para tu proyecto. No olvides hacer
 la estructura correta y guardar TODO tu CSS en el archivo styles.css
  -->
+<html>
+	<head>
+		 <title>Frontend Knockout</title>
+				<link rel = "stylesheet" type = "text/css" href="bootstrap/css/bootstrap.css">
+				<link rel = "stylesheet" type = "text/css" href="bootstrap/css/bootstrap.min.css">   
+				<link rel = "stylesheet" type = "text/css" href="bootstrap/css/bootstrap-theme.min.css">
+				<link rel = "stylesheet" type = "text/css" href="bootstrap/css/bootstrap-theme.css">
+				<!--LLamando Archivo CSS-->
+				<link rel = "stylesheet" type = "text/css" href="css/styles.css">
+   	
+	</head>
+	<body>
+ 			<div class="container">
+    			<div class="row">
+	   				<div class="col-md-12">
+		   				<div class="jumbotron">
+  							<h1>Basic</h1>
+  							<p>As a developer you should be able to bind data from input fields to html tags.</p>
+  						</div>		
+	   					<div class="panel panel-default">
+  							<div class="panel-heading"><h1>Entry your name</h1></div>
+	  							<div class="panel-body">  								
+	 							</div>
+								<br/>
+								<br/>
+								<br/>
+								<p>First name: <input data-bind="value: firstName" /></p>
+								<p>Last name: <input data-bind="value: lastName" /></p>
+								<h1>Hi, <span data-bind="text: fullName"> </span></h1>
+						</div>						
+					</div>
+				</div>
+			</div>			
+		<script  type="text/javascript"  src="http://knockoutjs.com/downloads/knockout-3.2.0.js "></script>
+	    <script type="text/javascript" src="js/script.js"></script>
+		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	</body>
+</html>

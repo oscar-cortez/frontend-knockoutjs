@@ -1,0 +1,65 @@
+<html>
+	<head>
+		 <title>Frontend Knockout</title>
+				<link rel = "stylesheet" type = "text/css" href="../bootstrap/css/bootstrap.css">
+				<link rel = "stylesheet" type = "text/css" href="../bootstrap/css/bootstrap.min.css">   
+				<link rel = "stylesheet" type = "text/css" href="../bootstrap/css/bootstrap-theme.min.css">
+				<link rel = "stylesheet" type = "text/css" href="../bootstrap/css/bootstrap-theme.css">
+				<!--LLamando Archivo CSS-->
+				<link rel = "stylesheet" type = "text/css" href="../css/styles.css">
+   	
+	</head>
+	<body>
+
+		<div class="container">
+    			<div class="row">
+	   				<div class="col-md-12">
+		   				<div class="jumbotron">
+  						<h2>People</h2>
+  							<p>As a user I must be able to display a minimum of 3 peoples, each with 3 children as a
+
+    list. (use ko.observableArray) Example:
+        Isabel tiene 3 hijos:
+            Diego
+            Fernando
+            Jose
+        Ines tiene 4 hijos:
+            Juan
+            Pedro
+            Maria
+
+    As a user I must be able to add a child to any person in the people list.
+</p>
+  						</div>			
+		
+		 <div class="container">
+    		<div class="row">
+    		<div class="col-md-12">
+    			<div class="panel panel-default">	
+    			<div class="panel-heading"><h2>People</h2></div>
+		<ul data-bind="foreach: people">
+		    <li>
+		        <div>
+		            <span data-bind="text: name"> </span> has <span data-bind='text: children().length'>&nbsp;</span> children:
+		            <a href='#' data-bind='click: addChild '>Add child</a>
+		            <span class='renderTime' data-bind='visible: $root.showRenderTimes'>
+		                (person rendered at <span data-bind='text: new Date().getSeconds()' > </span>)
+		            </span>
+		        </div>
+		        <ul data-bind="foreach: children">
+		            <li>
+		                <span data-bind="text: $data"> </span>
+		                <span class='renderTime' data-bind='visible: $root.showRenderTimes'>
+		                    (child rendered at <span data-bind='text: new Date().getSeconds()' > </span>)
+		                </span>
+		            </li>
+		        </ul>
+		    </li>
+		</ul>
+		
+		<label><input data-bind='checked: showRenderTimes' type='checkbox' /> Show render times</label> 
+	</body>
+</html>
+		<script  type="text/javascript"  src="http://knockoutjs.com/downloads/knockout-3.2.0.js "></script>
+	    <script type="text/javascript" src="../js/collections.js"></script>
+		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
